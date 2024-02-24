@@ -1,0 +1,21 @@
+[workspace]
+
+members = [
+    "rat",
+    "common",
+    "c2",
+]
+
+exclude = [
+    "c2-client",
+    "hazmat",
+]
+
+[profile.release]
+lto = true
+codegen-units = 1
+
+[profile.release.package.stager]
+opt-level = 'z'
+debug = false
+debug-assertions = false
